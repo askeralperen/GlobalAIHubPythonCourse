@@ -3,26 +3,26 @@
 
 # HW Final
 
-class Recipe():
+class Recipe():                    # parent class
   def __init__(self,products):
-    self.products = products
+    self.products = products       # products and their usage times are entered manually.
 
-  def cook(self):
+  def cook(self):                  
     #time = self.calc_time()
-    for product in self.products:
-      print(product[0],"kullanılıyor")
+    for product in self.products:     
+      print(product[0],"kullanılıyor")        #cooking sequence printing
       for i in range(product[1]):
         print(i+1,"dk geçti")
     time = self.calc_time()
-    print("yemeğiniz ",time, "dakikada hazırlandı.. Afiyet olsun: ")
+    print("yemeğiniz ",time, "dakikada hazırlandı.. Afiyet olsun: ")      # overall report
     
-  def calc_time(self):
+  def calc_time(self):              # cooking time calculator
     time = 0
     for product in self.products:
       time += product[1]
     return time
 
-class Recipe1(Recipe):
+class Recipe1(Recipe):                #child classes
   def __init__(self,products):
     super().__init__(products)
 
